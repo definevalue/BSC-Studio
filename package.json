@@ -31,13 +31,15 @@
     "pretest:e2e": "yarn build",
     "test:e2e": "jest '(\\/test\\/e2e/).*'",
     "pack": "yarn build && electron-builder --dir",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "prepare": "yarn run snyk-protect",
+    "snyk-protect": "snyk-protect"
   },
   "dependencies": {
-    "axios": "^0.21.1",
+    "axios": "^0.21.3",
     "crypto-browserify": "^3.12.0",
     "fs-extra": "^9.1.0",
-    "keytar": "^7.4.0",
+    "keytar": "^7.8.0",
     "monaco-ace-tokenizer": "^0.2.1",
     "node-pty": "0.10.0",
     "prettier": "^2.2.1",
@@ -47,7 +49,8 @@
     "solium": "ObsidianLabs/Ethlint",
     "solparse-exp-jb": "ObsidianLabs/solparse",
     "strip-ansi": "^6.0.0",
-    "trash": "^7.0.0"
+    "trash": "^7.0.0",
+    "@snyk/protect": "latest"
   },
   "devDependencies": {
     "@babel/plugin-proposal-class-properties": "^7.5.5",
@@ -174,5 +177,6 @@
       "category": "Development"
     },
     "extends": null
-  }
+  },
+  "snyk": true
 }
